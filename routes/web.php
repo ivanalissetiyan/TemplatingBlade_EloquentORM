@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::resource('/', LandingController::class);
+Route::get('clubs', [LandingController::class, 'clubs'])->name('clubs');
+Route::get('players', [LandingController::class, 'players'])->name('players');
+Route::get('managers', [LandingController::class, 'managers'])->name('managers');
+Route::get('stadiums', [LandingController::class, 'stadiums'])->name('stadiums');
