@@ -7,5 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stadium extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public $table = 'stadia';
+
+    protected $guarded = [
+        'id'
+    ];
+
+    // Relation
+    public function clubs()
+    {
+        return $this->hasOne('App\Models\Club', 'stadia_id');
+    }
 }

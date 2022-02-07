@@ -15,8 +15,8 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->id();
-            $table->integer('clubs_id');
-            $table->longText('photo');
+            $table->foreignId('clubs_id')->index('clubs_id_fk3_idx');
+            $table->longText('photo')->nullable();
             $table->string('name');
             $table->string('old')->nullable();
             $table->string('nationality');

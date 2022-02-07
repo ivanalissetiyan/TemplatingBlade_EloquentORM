@@ -15,7 +15,7 @@ class AddForeignKeysToClubs extends Migration
     {
         Schema::table('clubs', function (Blueprint $table) {
             $table->foreign('stadia_id', 'stadia_id_fk1')->references('id')
-                ->on('stadia')->onUpdate('CASCADE')->onDelete('RESTRICT');
+                ->on('stadia')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

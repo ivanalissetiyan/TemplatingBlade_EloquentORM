@@ -15,7 +15,7 @@ class AddForeignKeysToManagers extends Migration
     {
         Schema::table('managers', function (Blueprint $table) {
             $table->foreign('clubs_id', 'clubs_id_fk3')->references('id')
-                ->on('clubs')->onUpdate('CASCADE')->onDelete('RESTRICT');
+                ->on('clubs')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
