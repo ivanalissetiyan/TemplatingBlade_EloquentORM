@@ -10,8 +10,8 @@ class Club extends Model
     // use HasFactory;
     public $table = 'clubs';
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'stadia_id', 'name', 'logo', 'url', 'thropy',
     ];
 
     // Relation

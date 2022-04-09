@@ -10,8 +10,8 @@ class Stadium extends Model
     // use HasFactory;
     public $table = 'stadia';
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'name', 'capacity', 'address'
     ];
 
     // Relation

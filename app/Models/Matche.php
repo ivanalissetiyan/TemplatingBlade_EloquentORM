@@ -10,8 +10,8 @@ class Matche extends Model
     // use HasFactory;
     public $table = 'matches';
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'clubs_id', 'rivals_id', 'schedule'
     ];
 
     public function clubs()

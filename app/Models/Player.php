@@ -10,8 +10,8 @@ class Player extends Model
     // use HasFactory;
     public $table = 'players';
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'clubs_id', 'photo', 'name', 'height', 'position'
     ];
 
     public function clubs()

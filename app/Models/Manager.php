@@ -10,8 +10,8 @@ class Manager extends Model
     // use HasFactory;
     public $table = 'managers';
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'clubs_id', 'name', 'old', 'nationality'
     ];
 
     // Relation
