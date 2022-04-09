@@ -15,8 +15,8 @@ class CreateMatchesTable extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('clubs_id')->nullable()->index('clubs_idfk4_idx');
-            $table->foreignId('rivals_id')->nullable()->index('clubs_idfk5_idx');
+            $table->foreignId('clubs_id')->nullable()->index('clubs_id_fk4_idx');
+            $table->foreignId('rivals_id')->nullable()->index('clubs_id_fk5_idx');
             $table->dateTime('schedule');
             $table->timestamps();
         });
