@@ -4,37 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// call use model
+
+use App\Models\Club;
+use App\Models\Manager;
+use App\Models\Matche;
+use App\Models\Player;
+use App\Models\Stadium;
+
 class LandingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('pages.landing-page.index');
     }
 
-    public function clubs()
-    {
-        return view('pages.landing-page.clubs');
-    }
-
-    public function players()
-    {
-        return view('pages.landing-page.players');
-    }
-
-    public function managers()
-    {
-        return view('pages.landing-page.managers');
-    }
-
-    public function stadiums()
-    {
-        return view('pages.landing-page.stadiums');
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -100,5 +85,35 @@ class LandingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // method custom
+
+    public function clubs()
+    {
+        $clubs = Club::orderBy('thropy', 'desc')->get();
+
+        return view('pages.landing-page.clubs', ['clubs' => $clubs]);
+    }
+
+    public function players()
+    {
+        $players = Player::all();
+
+        return view('pages.landing-page.players', ['players' => $players]);
+    }
+
+    public function managers()
+    {
+        $managers = Manager::orderBy('old', 'desc')->get();
+
+        return view('pages.landing-page.managers', ['managers' => $managers]);
+    }
+
+    public function stadiums()
+    {
+        $stadiums = Stadium::orderBy('capacity', 'desc')->get();
+
+        return view('pages.landing-page.stadiums', ['stadiums' => $stadiums]);
     }
 }
